@@ -4,8 +4,8 @@
 
 <?php
 
-$nombre = $_GET["nombre"];
-$edad = $_GET["edad"];
+$nombre = $_POST["nombre"];
+$edad = $_POST["edad"];
 echo "<p>$nombre</p>";
 echo "<p>$edad</p>";
 ?>
