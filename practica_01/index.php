@@ -78,8 +78,10 @@ No usar expresiones regulares.
   <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["f"] == "ej2"){
-         
-           
+            $dni = $_POST["dni"];
+           if($dni.sterlen>9){
+
+           }
 
             }
         }
@@ -106,9 +108,9 @@ No usar expresiones regulares.
        $multiplicador;
 
       
-       echo "<table text-align:center; border=5>";
+       echo "<table text-align:center; border=5 style='background-color:red'>";
        echo "<tr>  ";
-       for ($filaTabla=1; $filaTabla<=1  ; $filaTabla++) { 
+       for ($filaTabla=1; $filaTabla<=5 ; $filaTabla++) { 
       
            echo "<td>Tabla del $filaTabla </td>";
            
@@ -119,7 +121,7 @@ echo "<tr>";
 
 
 for ($multiplicador=1; $multiplicador <=10 ; $multiplicador++) { 
-	for ($multiplicando=01; $multiplicando <= 1; $multiplicando++) { 
+	for ($multiplicando=01; $multiplicando <= 5; $multiplicando++) { 
 		echo "<td> $multiplicando X $multiplicador =";
 		echo ($multiplicando * $multiplicador);
 		echo "</td>";
@@ -131,12 +133,16 @@ echo "</table>";
 
 
 
- echo "<br>";
-echo "<table text-align:center; border=5;>";
-       echo "<tr> <br> ";
-       for ($filaTabla=2; $filaTabla<=2 ; $filaTabla++) { 
+
+
+
+
+echo "<table text-align:center; border=5 style='background-color:blue'>>";
+       echo "<tr>  ";
+       for ($filaTabla=6; $filaTabla<=10 ; $filaTabla++) { 
+      
            echo "<td>Tabla del $filaTabla </td>";
-        
+           
        }
        echo "</tr>";
 echo "<tr>";
@@ -144,115 +150,14 @@ echo "<tr>";
 
 
 for ($multiplicador=1; $multiplicador <=10 ; $multiplicador++) { 
-	for ($multiplicando=02; $multiplicando <= 2; $multiplicando++) { 
-		echo "<td>$multiplicando X $multiplicador =";
+	for ($multiplicando=06; $multiplicando <= 10; $multiplicando++) { 
+		echo "<td> $multiplicando X $multiplicador =";
 		echo ($multiplicando * $multiplicador);
 		echo "</td>";
 	}
 	echo "</tr>";
 }
 echo "</table>";
-
-
-
-
-echo "<table text-align:center; border=5>";
-       echo "<tr> ";
-       for ($filaTabla=3; $filaTabla<=3 ; $filaTabla++) { 
-           echo "<td>Tabla del $filaTabla </td>";
-       }
-       echo "</tr>";
-echo "<tr>";
-
-
-
-for ($multiplicador=1; $multiplicador <=10 ; $multiplicador++) { 
-	for ($multiplicando=03; $multiplicando <= 3; $multiplicando++) { 
-		echo "<td>$multiplicando X $multiplicador =";
-		echo ($multiplicando * $multiplicador);
-		echo "</td>";
-	}
-	echo "</tr>";
-}
-echo "</table>";
-
-
-
-echo "<table text-align:center; border=5>";
-       echo "<tr> ";
-       for ($filaTabla=4; $filaTabla<=4 ; $filaTabla++) { 
-           echo "<td>Tabla del $filaTabla </td>";
-       }
-       echo "</tr>";
-echo "<tr>";
-
-
-
-for ($multiplicador=1; $multiplicador <=10 ; $multiplicador++) { 
-	for ($multiplicando=04; $multiplicando <= 4; $multiplicando++) { 
-		echo "<td>$multiplicando X $multiplicador =";
-		echo ($multiplicando * $multiplicador);
-		echo "</td>";
-	}
-	echo "</tr>";
-}
-echo "</table>";
-
-
-
-echo "<table text-align:center; border=5;>";
-       echo "<tr> ";
-       for ($filaTabla=5; $filaTabla<=5 ; $filaTabla++) { 
-           echo "<td>Tabla del $filaTabla </td>";
-       }
-       echo "</tr>";
-echo "<tr>";
-
-
-
-for ($multiplicador=1; $multiplicador <=10 ; $multiplicador++) { 
-	for ($multiplicando=05; $multiplicando <= 5; $multiplicando++) { 
-		echo "<td>$multiplicando X $multiplicador =";
-		echo ($multiplicando * $multiplicador);
-		echo "</td>";
-	}
-	echo "</tr>";
-}
-echo "</table>";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>
