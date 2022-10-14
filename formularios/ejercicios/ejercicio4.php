@@ -21,5 +21,8 @@
     
 </body>
 
-<a href="index.html">Volver</a>
+<?php
+require 'footer.php';
+
+?>
 </html>

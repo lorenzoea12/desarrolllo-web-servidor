@@ -99,14 +99,15 @@
     
         <div>
            
-                  <h2> Ejercicio 3 </h2>
+                  <h2 id="ej3"> Ejercicio 3 </h2>
                 <p>Crear un formulario que reciba el nombre y la edad de una persona y
                     muestre por pantalla si es menor de edad, es adulta, o esta jubilada en funcion
                     a su edad. Ademas:
                     - Convertir la edad a un numero entero
                     - Convertir el nombre introducido a minusculas salvo la primera letra, que sera mayuscula
                      </p>
- <form action=""; method="post">
+                     
+ <form action="#ej3"; method="post">
              <label>Nombre</label><br>
              <input type="text" name="nombre"><br><br>
              <label>Edad</label><br>
@@ -185,10 +186,10 @@
     
     
         <div>
-            <h2> Ejercicio 5</h2>
+            <h2 id = "ej5"> Ejercicio 5</h2>
            
                 <p> Formulario que reciba dos numeros. Devolver el resultado de elevar el primero al segundo. </p>
-                <form action=""; method="post">
+                <form action="#ej5"; method="post">
     <label>Primer Numero</label><br/>
     <input type="text" name="numero"><br/>
     <label>Segundo Numero</label><br/>
@@ -197,27 +198,30 @@
     <input type="submit" value="Enviar"><br/>
 
 
- <?php
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if($_POST["f"] == "ej5"){
-        $b=$_POST["numero"];
-        $x =$_POST["Numero2"];
-        $resultado = 1;
+<?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if ($_POST["f"] == "ej5") {
+                require '../Funciones/potencia.php';
+                $b = $_POST['numero'];
+                $x = $_POST['Numero2'];
+                $resultado = potencia($b, $x);
+                if ($resultado == -1) {
+                    echo "<p>el numero no puede ser negativo</p>";
+                } else {
+                    echo "<p>El resultado es $resultado</p>";
+                }
+            }
+        }
+        ?>
+
     
-    for ($i = $x; $i > 0; $i--) {
-        $resultado *= $b;
-    }
-    echo "La potencia es {$b}^{$x} = {$resultado}";
-    
-
-    }
-}
 
 
 
-?>
+
+
 </form>
         
         
@@ -233,10 +237,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     
         <div>
-            <h2> Ejercicio 6 </h2>
+            <h2 id="ej6"> Ejercicio 6 </h2>
                 
                 <p> Formulario que reciba un número y devuelva su factorial. </p>
-                <form action=""; method="post">
+                <form action="#ej6"; method="post">
     <label>Indique un Numero</label><br>
     <input type="text" name="numero"><br><br>
     <input type="hidden" name="f" value="ej6"><br/>
@@ -246,15 +250,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($_POST["f"] == "ej6"){
-        $numero=$_POST["numero"];
-$factorial=1;
-
-for($i=1;$i<=$numero;$i++){
-    $factorial=$factorial*$i;
-}
-
-echo "<p>$factorial</p>";
-
+       require '../Funciones/potencia.php';
+       $numero=$_POST["numero"];
+       $factorial=resultado($numero);
+       echo"<p> El resultado es $resultado</p>";
     }
 }
 

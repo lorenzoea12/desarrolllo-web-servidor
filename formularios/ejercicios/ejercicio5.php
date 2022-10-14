@@ -7,5 +7,7 @@
     <input type="submit" value="Enviar">
 </form>
 
+<?php
+require 'footer.php';
 
-<a href="index.html">Volver</a>
+?>

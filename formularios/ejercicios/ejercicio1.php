@@ -1,4 +1,4 @@
-<h1> Formula 1</h1>
+<h1> Formulario  1</h1>
 
 <form action="ejercicio1_respuesta.php" method="get">
     <label>Nombre</label><br>
@@ -11,4 +11,7 @@
 
 
 
-<a href="index.html">Volver</a>
+<?php
+require 'footer.php';
+
+?>
