@@ -123,8 +123,8 @@ No usar expresiones regulares.
 
   <?php
         
-       $multiplicando;
        $multiplicador;
+       $mutiplicando;
 
       
        echo "<table text-align:center; border=5 style='background-color:red'>";
