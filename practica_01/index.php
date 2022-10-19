@@ -11,6 +11,10 @@
             background-color:green;
         }
 
+        h2{
+            background-color:white;
+        }
+
 
     </style>
 </head>
