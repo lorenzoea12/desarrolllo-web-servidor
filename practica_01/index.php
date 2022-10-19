@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios Practica 1 </title>
+
+    <style>
+        body{
+            background-color:green;
+        }
+
+
+    </style>
 </head>
 <body>
 
@@ -79,12 +87,19 @@ No usar expresiones regulares.
         if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["f"] == "ej2"){
             $dni = $_POST["dni"];
-           if($dni.sterlen>9){
+            require './funcionDNI.php';
+            if(dniValido($dni)){
+                echo "DNI Válido";
+            }else{
+                echo "DNI Inválido";
+            }
+
+          
 
            }
 
             }
-        }
+        
     
 
 
