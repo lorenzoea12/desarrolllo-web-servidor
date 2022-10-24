@@ -49,7 +49,7 @@ Ej.: Si a=3 y b=4, se devolverán los tres primeros números primos empezando po
           require 'funcionEjercicio1.php';
           $num1 = $_POST["numero1"];
           $num2 = $_POST["numero2"];
-          $i = $num2+1;
+          $i = $num2;
           do{ 
 
               if(esPrimo($i)){
