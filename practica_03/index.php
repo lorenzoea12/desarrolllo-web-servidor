@@ -15,7 +15,18 @@
 
 <body>
 
+<style>
+    body{
+        background-color: grey;
+    }
 
+    h3{
+        color: white;
+    }
+
+
+
+</style>
 
     <h3>Ejercicio 3 </h3>
 
