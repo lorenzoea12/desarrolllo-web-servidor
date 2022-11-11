@@ -13,7 +13,6 @@
         <?php require '../header.php' ?>
         <br>
         <h1>Listado de prendas</h1>
-        <a class="btn btn-secondary" href="../../public">Incio</a>
 
         <div class="row">
             <div class="col-9">
@@ -27,6 +26,7 @@
                             <th>Talla</th>
                             <th>Precio</th>
                             <th>Categoría</th>
+                            <th>Imagen</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -36,6 +36,21 @@
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 $id = $_POST["id"];
 
+                                //  Consulta para coger la ruta de la imagen y luego borrarla
+                                $sql = "SELECT imagen FROM prenda WHERE id = '$id'";
+                                $resultado = $conexion -> query($sql);
+
+                                if ($resultado -> num_rows > 0) {
+                                    while ($fila = $resultado -> fetch_assoc()) {
+                                        $imagen = $fila["imagen"];
+                                        if($imagen!="/images/prendas/camiseta.jpg"){
+                                          unlink("../.." . $imagen);
+                                      }                               
+                                  }
+  
+  
+                                }
+                                //  Consulta para borrar la prenda
                                 $sql = "DELETE FROM prenda WHERE id = '$id'";
 
                                 if ($conexion -> query($sql)) {
@@ -61,12 +76,16 @@
                                     $talla = $fila["talla"];
                                     $precio = $fila["precio"];
                                     $categoria = $fila["categoria"];
+                                    $imagen = $fila["imagen"];
                                     ?>
                                     <tr>
                                         <td><?php echo $nombre ?></td>
                                         <td><?php echo $talla ?></td>
                                         <td><?php echo $precio ?></td>
                                         <td><?php echo $categoria ?></td>
+                                        <td>
+                                            <img width="50" height="60" src="../..<?php echo $imagen ?>">
+                                        </td>
                                         <td>
                                             <form action="mostrar_prenda.php" method="get">
                                                 <button class="btn btn-primary" type="submit">Ver</button>

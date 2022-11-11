@@ -29,6 +29,7 @@
                             <th>Nombre</th>
                             <th>Primer_Apellido</th>
                             <th>Segundo_Apellido</th>
+                            <th>Imagen</th>
                             <th>Fecha_Nacimiento</th>
                             <th></th>
                             <th></th>
@@ -38,6 +39,22 @@
                         <?php   //  Borrar prenda
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $id = $_POST["id"];
+
+                              //  Consulta para coger la ruta de la imagen y luego borrarla
+                              $sql = "SELECT imagen FROM  clientes WHERE id = '$id'";
+                              $resultado = $conexion -> query($sql); 
+
+                              if ($resultado -> num_rows > 0) {
+                                  while ($fila = $resultado -> fetch_assoc()) {
+                                      $imagen = $fila["imagen"];
+                                      if($imagen!="/images/clientes/messi.jpg"){
+                                        unlink("../.." . $imagen);
+                                    }                               
+                                }
+
+
+                              }
+
 
                             $sql = "DELETE FROM clientes WHERE id = '$id'";
 
@@ -54,9 +71,14 @@
                         }
                         ?>
 
+                        
+
                         <?php   //  Seleccionar todos los clientes
                         $sql = "SELECT * FROM clientes";
                         $resultado = $conexion->query($sql);
+
+
+                        
 
                         if ($resultado->num_rows > 0) {
                             while ($fila = $resultado->fetch_assoc()) {
@@ -65,13 +87,18 @@
                                 $primer_apellido = $fila["primer_apellido"];
                                 $segundo_apellido = $fila["segundo_apellido"];
                                 $fecha_nacimiento = $fila["fecha_nacimiento"];
+                                $imagen=$fila["imagen"];
                         ?>
                                 <tr>
                                     <td><?php echo $usuario ?></td>
                                     <td><?php echo $nombre ?></td>
                                     <td><?php echo $primer_apellido?></td>
                                     <td><?php echo $segundo_apellido ?></td>
+                                    <td>
+                                            <img width="50" height="60" src="../..<?php echo $imagen ?>">
+                                        </td>
                                     <td><?php echo $fecha_nacimiento ?></td>
+
                                     <td>
                                         <form action="mostrar_clientes.php" method="get">
                                             <button class="btn btn-primary" type="submit">Ver</button>
