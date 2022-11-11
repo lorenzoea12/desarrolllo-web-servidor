@@ -35,7 +35,7 @@
                 $imagen = "/images/clientes/" . $file_name;
             }else{
                 echo "<p>Fichero movido con éxito</p>";
-                $imagen = "/images/clientes/cristiano.jpg";
+                $imagen = "/images/clientes/messi.jpg";
             }
 
 
