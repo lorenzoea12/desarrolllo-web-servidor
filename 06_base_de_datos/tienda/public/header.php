@@ -12,9 +12,19 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="http://localhost/06_base_de_datos/tienda/public/">Inicio</a>
-        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/prendas/">Prendas</a>
-        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/clientes/">Clientes</a>
-        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/compras/">Compras</a>
+        <?php
+        if ($_SESSION["rol"] == "administrador") {
+        ?>
+          <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/prendas/">Prendas</a>
+          <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/clientes/">Clientes</a>
+          <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/compras/">Compras</a>
+        <?php
+        }
+        ?>
+        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/compras/comprar_prenda.php">Nueva compra</a>
+        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/compras/miscompras.php">Mis compras</a>
+        <a class="nav-link" href="http://localhost/06_base_de_datos/tienda/public/desconectarse.php">Desconectarse</a>
+        <a class="nav-link" href="">Bienvenid@ <?php echo $_SESSION["usuario"] ?></a>
       </div>
     </div>
   </div>

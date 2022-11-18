@@ -11,21 +11,25 @@
 
 <body>
     <div class="container">
+    <?php require '../../util/control_de_acceso.php'?>
         <?php require '../../util/base_de_datos.php' ?>
         <?php require '../header.php' ?>
         <br>
         <h1>Listado de clientes</h1>
         <a class="btn btn-secondary" href="../../public">Incio</a>
+       
 
         <div class="row">
             <div class="col-9">
                 <br>
                 <a class="btn btn-primary" href="insertar_clientes.php">Nuevo Cliente</a>
+                <a class="btn btn-primary" href="http://localhost/06_base_de_datos/tienda/public/iniciar_sesion.php">Login</a>
                 <br><br>
                 <table class="table table-striped table-hover">
                     <thead class="table-dark">
                         <tr>
                             <th>Usuario</th>
+                            <th>Contraseña</th>
                             <th>Nombre</th>
                             <th>Primer_Apellido</th>
                             <th>Segundo_Apellido</th>
@@ -33,9 +37,12 @@
                             <th>Fecha_Nacimiento</th>
                             <th></th>
                             <th></th>
+                            <br><br>
                         </tr>
                     </thead>
                     <tbody>
+
+
                         <?php   //  Borrar prenda
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $id = $_POST["id"];
@@ -83,14 +90,18 @@
                         if ($resultado->num_rows > 0) {
                             while ($fila = $resultado->fetch_assoc()) {
                                 $usuario = $fila["usuario"];
+                                $contrasena=$fila["contrasena"];
                                 $nombre = $fila["nombre"];
                                 $primer_apellido = $fila["primer_apellido"];
                                 $segundo_apellido = $fila["segundo_apellido"];
                                 $fecha_nacimiento = $fila["fecha_nacimiento"];
                                 $imagen=$fila["imagen"];
+
+                                $hash_contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
                         ?>
                                 <tr>
                                     <td><?php echo $usuario ?></td>
+                                    <td><?php echo $hash_contrasena ?></td>
                                     <td><?php echo $nombre ?></td>
                                     <td><?php echo $primer_apellido?></td>
                                     <td><?php echo $segundo_apellido ?></td>
@@ -120,7 +131,7 @@
                 </table>
             </div>
             <div class="col-3">
-                <img width="200" heigth="200" src="../../images/clientes.jpg">
+                <img width="200" heigth="200" src="../../images/prendasfotos/clientes.jpg">
             </div>
         </div>
     </div>

@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <?php require '../../util/control_de_acceso.php' ?>
         <?php require '../../util/base_de_datos.php' ?>
         <?php require '../header.php' ?>
 
@@ -45,8 +46,8 @@
                     <input type="hidden" name="talla" value="<?php echo $talla ?>">
                     <input type="hidden" name="precio" value="<?php echo $precio ?>">
                     <input type="hidden" name="categoria" value="<?php echo $categoria ?>">
-                    <button type="submit" class="btn btn-primary">Editar</button>
                     <a class="btn btn-secondary" href="index.php">Volver</a>
+                    <button type="submit" class="btn btn-primary">Editar</button>
                 </form>
             </div>
             <div class="col-4">

@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+    <?php require '../../util/control_de_acceso.php'?>
         <?php require '../../util/base_de_datos.php' ?>
         <?php require '../header.php' ?>
         <br>
@@ -23,10 +24,10 @@
                     <thead class="table-dark">
                         <tr>
                             <th>Nombre</th>
+                            <th>Imagen</th>
                             <th>Talla</th>
                             <th>Precio</th>
                             <th>Categoría</th>
-                            <th>Imagen</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -50,6 +51,7 @@
   
   
                                 }
+  
                                 //  Consulta para borrar la prenda
                                 $sql = "DELETE FROM prenda WHERE id = '$id'";
 
@@ -65,7 +67,6 @@
                                 }
                             }
                         ?>
-
                         <?php   //  Seleccionar todas las prendas
                             $sql = "SELECT * FROM prenda";
                             $resultado = $conexion -> query($sql);
@@ -80,12 +81,12 @@
                                     ?>
                                     <tr>
                                         <td><?php echo $nombre ?></td>
-                                        <td><?php echo $talla ?></td>
-                                        <td><?php echo $precio ?></td>
-                                        <td><?php echo $categoria ?></td>
                                         <td>
                                             <img width="50" height="60" src="../..<?php echo $imagen ?>">
                                         </td>
+                                        <td><?php echo $talla ?></td>
+                                        <td><?php echo $precio ?></td>
+                                        <td><?php echo $categoria ?></td>
                                         <td>
                                             <form action="mostrar_prenda.php" method="get">
                                                 <button class="btn btn-primary" type="submit">Ver</button>
@@ -107,7 +108,7 @@
                 </table>
             </div>
             <div class="col-3">
-                <img width="200" heigth="200" src="../../images/ropa.jpg">
+                <img width="200" heigth="200" src="../../images/prendasfotos/clientes.jpg">
             </div>
         </div>
     </div>

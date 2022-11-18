@@ -29,7 +29,8 @@
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "SELECT * FROM vw_clientes_prendas";
+                        $usuario=$_SESSION["usuario"];
+                        $sql = "SELECT * FROM vw_clientes_prendas where usuario = '$usuario'";
                         $resultado = $conexion -> query($sql);
 
                         if ($resultado -> num_rows > 0) {

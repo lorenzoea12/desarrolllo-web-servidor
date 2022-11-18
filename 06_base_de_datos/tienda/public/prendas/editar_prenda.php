@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require '../../util/control_de_acceso.php' ?>
     <?php
     require '../../util/base_de_datos.php';
 
@@ -32,18 +33,23 @@
                                     categoria = '$categoria'
                                 WHERE id = '$id'";
 
-if ($conexion -> query($sql)) {
-    ?>
+        if ($conexion -> query($sql) == "TRUE") {
+        ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-           Registro modificado
+            Prenda modificada con éxito
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    <?php
-    } else {
-        echo "<p>Error al modificar</p>";
+        <?php
+        } else {
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Error al modificar la prenda
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php
+        }
     }
-}
-?>
+    ?>
     <div class="container">
         <h1>Editar prenda</h1>
         <div class="row">

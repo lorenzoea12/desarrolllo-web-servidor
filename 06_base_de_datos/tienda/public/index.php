@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <?php require '../util/control_de_acceso.php'?>
         <?php require 'header.php' ?>
         <br>
         <h1>¡Bienvenid@ a nuestra tienda!</h1>

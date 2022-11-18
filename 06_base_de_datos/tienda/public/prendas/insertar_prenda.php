@@ -8,6 +8,7 @@
     <title>Nueva Prenda</title>
 </head>
 <body>
+ 
     <?php
         require '../../util/base_de_datos.php';
 
@@ -26,7 +27,6 @@
 
             if (!empty($nombre) && !empty($talla) && !empty($precio)) {
                 //  Subimos la imagen a la carpeta deseada
-
                 if(move_uploaded_file($file_temp_name, $path)){
                     echo "<p>Fichero movido con éxito</p>";
                     $imagen = "/images/prendas/" . $file_name;
@@ -34,8 +34,9 @@
                     echo "<p>Fichero movido con éxito</p>";
                     $imagen = "/images/prendas/camiseta.jpg";
                 }
+
                 //  Insertamos la prenda en la base de datos
-               
+       
                 if (!empty($categoria)) {
                     $sql = "INSERT INTO prenda (nombre, talla, precio, categoria, imagen)
                         VALUES ('$nombre', '$talla', '$precio', '$categoria', '$imagen')";
