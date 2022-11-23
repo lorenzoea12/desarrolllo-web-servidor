@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="compras.css" />
     <title>Comprar prenda</title>
 </head>
 <body>
@@ -54,10 +55,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Producto</th>
-                            <th>Imagen</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
+                            <th style="color: white;">Producto</th>
+                            <th style="color: white;">Imagen</th>
+                            <th style="color: white;">Precio</th>
+                            <th style="color: white;">Cantidad</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -71,12 +72,12 @@
                             ?>
                                 <form action="" method="post">
                                     <tr>
-                                        <td><?php echo $fila["nombre"] ?></td>
+                                        <td style="color: white;" ><?php echo $fila["nombre"] ?></td>
                                         <td>
                                             <img width="50" height="60" src="../..<?php echo $fila["imagen"] ?>">
                                         </td>
-                                        <td><?php echo $fila["precio"] ?></td>
-                                        <td>
+                                        <td style="color: white;"><?php echo $fila["precio"] ?></td>
+                                        <td style="color: white;" >
                                             <select class="form-select" name="cantidad">
                                                 <option value="1" selected>1</option>
                                                 <option value="2">2</option>
@@ -85,7 +86,7 @@
                                                 <option value="5">5</option>
                                             </select>
                                         </td>
-                                        <td>
+                                        <td style="color: white;">
                                             <input type="hidden" name="prenda" value="<?php echo $fila["id"] ?>">
                                             <button class="btn btn-success" type="submit">
                                                 Comprar
@@ -99,6 +100,8 @@
                         ?>
                     </tbody>
                 </table>
+                <a class="btn btn-secondary" href="../clientes/index.php">Volver</a>   
+                <a class="btn btn-primary" href="../compras/miscompras.php">Siguiente</a>  
             </div>
         </div>
     </div>

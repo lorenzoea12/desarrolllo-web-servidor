@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="prendas.css" />
     <title>Index</title>
 </head>
 <body>
@@ -80,20 +81,20 @@
                                     $imagen = $fila["imagen"];
                                     ?>
                                     <tr>
-                                        <td><?php echo $nombre ?></td>
+                                        <td style="color: white;"><?php echo $nombre ?></td>
                                         <td>
                                             <img width="50" height="60" src="../..<?php echo $imagen ?>">
                                         </td>
-                                        <td><?php echo $talla ?></td>
-                                        <td><?php echo $precio ?></td>
-                                        <td><?php echo $categoria ?></td>
-                                        <td>
+                                        <td style="color: white;"><?php echo $talla ?></td>
+                                        <td style="color: white;"><?php echo $precio ?></td>
+                                        <td style="color: white;"><?php echo $categoria ?></td>
+                                        <td style="color: white;">
                                             <form action="mostrar_prenda.php" method="get">
                                                 <button class="btn btn-primary" type="submit">Ver</button>
                                                 <input type="hidden" name="id" value="<?php echo $fila["id"] ?>">
                                             </form>
                                         </td>
-                                        <td>
+                                        <td style="color: white;">
                                             <form action="" method="post">
                                                 <button class="btn btn-danger" type="submit">Borrar</button>
                                                 <input type="hidden" name="id" value="<?php echo $fila["id"] ?>">
@@ -106,9 +107,12 @@
                         ?>
                     </tbody>
                 </table>
+                <a class="btn btn-secondary" href="../index.php">Volver</a>   
+                <a class="btn btn-primary" href="../clientes/index.php">Siguiente</a>   
             </div>
             <div class="col-3">
                 <img width="200" heigth="200" src="../../images/prendasfotos/clientes.jpg">
+            
             </div>
         </div>
     </div>

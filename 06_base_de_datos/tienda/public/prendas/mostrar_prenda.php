@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="prendas.css" />
     <title>Ver prenda</title>
 </head>
 <body>
@@ -36,10 +37,10 @@
 
         <div class="row">
             <div class="col-4">
-                <p>Nombre: <?php echo $nombre ?></p>
-                <p>Talla: <?php echo $talla ?></p>
-                <p>Precio: <?php echo $precio ?></p>
-                <p>Categoría: <?php echo $categoria ?></p>
+                <p style="color: white;" >Nombre: <?php echo $nombre ?></p>
+                <p style="color: white;">Talla: <?php echo $talla ?></p>
+                <p style="color: white;">Precio: <?php echo $precio ?></p>
+                <p style="color: white;">Categoría: <?php echo $categoria ?></p>
                 <form action="editar_prenda.php" method="get">
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <input type="hidden" name="nombre" value="<?php echo $nombre ?>">
@@ -52,6 +53,7 @@
             </div>
             <div class="col-4">
                 <img witdh="200" height="300" src="../..<?php echo $imagen ?>">
+           
             </div>
         </div>
     </div>

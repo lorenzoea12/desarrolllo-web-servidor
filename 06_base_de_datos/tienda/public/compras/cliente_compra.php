@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="compras.css" />
     <title>Document</title>
 </head>
 <body>
@@ -50,11 +51,11 @@
                                 $precio_total += ($precio_unitario * $cantidad);
                                 ?>
                                 <tr>
-                                    <td><?php echo $producto ?></td>
-                                    <td><?php echo $cantidad ?></td>
-                                    <td><?php echo $precio_unitario ?></td>
-                                    <td><?php echo $precio_unitario*$cantidad ?></td>
-                                    <td><?php echo $fecha ?></td>
+                                    <td style="color: white;"><?php echo $producto ?></td>
+                                    <td style="color: white;"><?php echo $cantidad ?></td>
+                                    <td style="color: white;"><?php echo $precio_unitario ?></td>
+                                    <td style="color: white;"><?php echo $precio_unitario*$cantidad ?></td>
+                                    <td style="color: white;"><?php echo $fecha ?></td>
                                 </tr>
                                 <?php
                             }
@@ -62,7 +63,9 @@
                         ?>
                     </tbody>
                 </table>
+  
                 <h4><span class="badge bg-success">Total: <?php echo $precio_total ?>€</span></h4>
+                <a class="btn btn-secondary" href="index.php">Volver</a>
             </div>
         </div>
     </div>

@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="clientes.css" />
     <title>Ver Cliente</title>
 </head>
 <body>
     <div class="container">
+    <?php require '../../util/control_de_acceso.php'?>
         <?php require '../../util/base_de_datos.php' ?>
         <?php require '../header.php' ?>
 
@@ -35,11 +37,11 @@
 
         <div class="row">
             <div class="col-4">
-                <p>Usuario: <?php echo $usuario?></p>
-                <p>Nombre: <?php echo $nombre ?></p>
-                <p>Primer_apellido: <?php echo $primer_apellido ?></p>
-                <p>Segundo_apellido: <?php echo $segundo_apellido?></p>
-                <p>Fecha_nacimiento: <?php echo $fecha_nacimiento?></p>
+                <p style="color: white;" >Usuario: <?php echo $usuario?></p>
+                <p style="color: white;">Nombre: <?php echo $nombre ?></p>
+                <p style="color: white;">Primer_apellido: <?php echo $primer_apellido ?></p>
+                <p style="color: white;">Segundo_apellido: <?php echo $segundo_apellido?></p>
+                <p style="color: white;">Fecha_nacimiento: <?php echo $fecha_nacimiento?></p>
                 <form action="editar_clientes.php" method="get">
                     <input type="hidden" name="id" value="<?php echo $id ?>">
                     <input type="hidden" name="usuario" value="<?php echo $usuario ?>">

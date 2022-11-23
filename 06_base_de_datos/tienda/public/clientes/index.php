@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="clientes.css" />
     <title>Index</title>
 </head>
 
 <body>
     <div class="container">
-    <?php require '../../util/control_de_acceso.php'?>
+        <?php require '../../util/control_de_acceso.php' ?>
         <?php require '../../util/base_de_datos.php' ?>
         <?php require '../header.php' ?>
         <br>
         <h1>Listado de clientes</h1>
         <a class="btn btn-secondary" href="../../public">Incio</a>
-       
+
 
         <div class="row">
             <div class="col-9">
@@ -47,20 +48,18 @@
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $id = $_POST["id"];
 
-                              //  Consulta para coger la ruta de la imagen y luego borrarla
-                              $sql = "SELECT imagen FROM  clientes WHERE id = '$id'";
-                              $resultado = $conexion -> query($sql); 
+                            //  Consulta para coger la ruta de la imagen y luego borrarla
+                            $sql = "SELECT imagen FROM  clientes WHERE id = '$id'";
+                            $resultado = $conexion->query($sql);
 
-                              if ($resultado -> num_rows > 0) {
-                                  while ($fila = $resultado -> fetch_assoc()) {
-                                      $imagen = $fila["imagen"];
-                                      if($imagen!="/images/clientes/messi.jpg"){
+                            if ($resultado->num_rows > 0) {
+                                while ($fila = $resultado->fetch_assoc()) {
+                                    $imagen = $fila["imagen"];
+                                    if ($imagen != "/images/clientes/messi.jpg") {
                                         unlink("../.." . $imagen);
-                                    }                               
+                                    }
                                 }
-
-
-                              }
+                            }
 
 
                             $sql = "DELETE FROM clientes WHERE id = '$id'";
@@ -78,37 +77,36 @@
                         }
                         ?>
 
-                        
+
 
                         <?php   //  Seleccionar todos los clientes
                         $sql = "SELECT * FROM clientes";
                         $resultado = $conexion->query($sql);
 
 
-                        
 
                         if ($resultado->num_rows > 0) {
                             while ($fila = $resultado->fetch_assoc()) {
                                 $usuario = $fila["usuario"];
-                                $contrasena=$fila["contrasena"];
+                                $contrasena = $fila["contrasena"];
                                 $nombre = $fila["nombre"];
                                 $primer_apellido = $fila["primer_apellido"];
                                 $segundo_apellido = $fila["segundo_apellido"];
                                 $fecha_nacimiento = $fila["fecha_nacimiento"];
-                                $imagen=$fila["imagen"];
+                                $imagen = $fila["imagen"];
 
                                 $hash_contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
                         ?>
                                 <tr>
-                                    <td><?php echo $usuario ?></td>
-                                    <td><?php echo $hash_contrasena ?></td>
-                                    <td><?php echo $nombre ?></td>
-                                    <td><?php echo $primer_apellido?></td>
-                                    <td><?php echo $segundo_apellido ?></td>
-                                    <td>
-                                            <img width="50" height="60" src="../..<?php echo $imagen ?>">
-                                        </td>
-                                    <td><?php echo $fecha_nacimiento ?></td>
+                                    <td style="color: white;"><?php echo $usuario ?></td>
+                                    <td style="color: white;"><?php echo $hash_contrasena ?></td>
+                                    <td style="color: white;"><?php echo $nombre ?></td>
+                                    <td style="color: white;"><?php echo $primer_apellido ?></td>
+                                    <td style="color: white;"><?php echo $segundo_apellido ?></td>
+                                    <td style="color: white;">
+                                        <img width="50" height="60" src="../..<?php echo $imagen ?>">
+                                    </td>
+                                    <td style="color: white;"><?php echo $fecha_nacimiento ?></td>
 
                                     <td>
                                         <form action="mostrar_clientes.php" method="get">
@@ -129,10 +127,10 @@
                         ?>
                     </tbody>
                 </table>
+                <a class="btn btn-secondary" href="../prendas/index.php">Volver</a>  
+                <a class="btn btn-primary" href="../compras/index.php">Siguiente</a>   
             </div>
-            <div class="col-3">
-                <img width="200" heigth="200" src="../../images/prendasfotos/clientes.jpg">
-            </div>
+    
         </div>
     </div>
 

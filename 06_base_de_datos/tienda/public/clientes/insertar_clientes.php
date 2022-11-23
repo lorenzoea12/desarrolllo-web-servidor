@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="clientes.css" />
     <title>Nuevo Cliente</title>
 </head>
 
 <body>
     <?php
+    require '../../util/control_de_acceso.php';
     require '../../util/base_de_datos.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -66,40 +69,40 @@
         <div class="row">
             <div class="col-6">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Usuario</label>
                         <input class="form-control" type="text" name="usuario">
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Nombre</label>
                         <input class="form-control" type="text" name="nombre">
                     </div>
 
 
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Primer apellido</label>
                         <input class="form-control" type="text" name="primer_apellido">
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Segundo apellido</label>
                         <input class="form-control" type="text" name="segundo_apellido">
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Fecha de nacimiento</label>
                         <input class="form-control" type="date" name="fecha_nacimiento">
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Imagen</label>
                         <input class="form-control" type="file" name="imagen">
                     </div>
 
 
                     
-                    <div class="form-group mb-3">
+                    <div  style="color: white;" class="form-group mb-3">
                         <label class="form-label">Contraseña</label>
                         <input class="form-control" type="password" name="contrasena">
                     </div>
